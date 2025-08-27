@@ -1,0 +1,31 @@
+--- #cloud基础配置
+spring:
+  cloud:
+    nacos:
+      # 组册服务配置
+      discovery:
+        # 给当前的服务命名 默认${spring.application.name}
+        service: ${spring.application.name}
+        server-addr: 127.0.0.1:8848
+        # 命名空间
+        namespace: 79d5d534-a47d-4d65-b10f-7f4de39920e2
+        # 分组
+        group: DEFAULT_GROUP
+        # 账号信息
+        username: nacos
+        password: nacos
+      # config 配置中心
+      config:
+        # 默认会加载 ${spring.application.name}-${spring.profiles.active}.type
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: ${spring.cloud.nacos.discovery.group}
+        file-extension: yaml
+        # 账号信息
+        username: ${spring.cloud.nacos.discovery.username}
+        password: ${spring.cloud.nacos.discovery.password}
+        extension-configs[0]:
+          data-id: yren-dynamic-tp-nacos-demo.${spring.cloud.nacos.config.file-extension}
+          # 刷新
+          refresh: true
+          group: ${spring.cloud.nacos.discovery.group}

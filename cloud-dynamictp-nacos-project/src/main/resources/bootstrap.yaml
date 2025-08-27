@@ -1,0 +1,21 @@
+server:
+  port: 9892
+
+spring:
+  application:
+    name: cloud-dynamictp-nacos-project
+  profiles:
+    active: dev
+
+#actuator 配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "dynamictp"  # 暴露指定端点,或者使用 "*" 暴露所有端点（生产环境不推荐）
+      path-mapping:
+        # 将默认的 dynamictp 映射为 dynamic-tp,当前版本dynamictp,监控Endpoint为dynamictp,但是监控组件还是默认访问dynamic-tp所以需要转换
+        dynamictp: dynamic-tp
+  endpoint:
+    dynamictp:
+      enabled: true
