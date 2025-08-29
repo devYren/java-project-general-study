@@ -25,6 +25,8 @@
         <!--线程池监控-->
         <dynamic-tp-spring.version>1.2.2</dynamic-tp-spring.version>
         <dynamic-tp-spring-boot-starter-nacos.version>1.2.2</dynamic-tp-spring-boot-starter-nacos.version>
+        <!--序列化-->
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <!-- 依赖版本管理 -->
@@ -65,6 +67,12 @@
                 <groupId>org.dromara.dynamictp</groupId>
                 <artifactId>dynamic-tp-spring-cloud-starter-nacos</artifactId>
                 <version>${dynamic-tp-spring-boot-starter-nacos.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

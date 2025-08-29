@@ -29,3 +29,8 @@ spring:
           # 刷新
           refresh: true
           group: ${spring.cloud.nacos.discovery.group}
+        extension-configs[1]:
+          data-id: custom-dynamic-tp-nacos-demo.${spring.cloud.nacos.config.file-extension}
+          # 刷新
+          refresh: true
+          group: ${spring.cloud.nacos.discovery.group}
