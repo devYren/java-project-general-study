@@ -11,6 +11,7 @@
 
     <modules>
         <module>cloud-dynamictp-nacos-project</module>
+        <module>media-vad-project</module>
     </modules>
 
     <properties>
